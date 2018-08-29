@@ -27,8 +27,11 @@ export class ElectronService {
     }
   }
 
-  isElectron = () => {
+  public isElectron() {
     return window && window.process && window.process.type;
   }
 
+  public writeToFile(filePath: string, contents: string) {
+    this.fs.writeFileSync(filePath, contents);
+  }
 }
