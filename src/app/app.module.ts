@@ -5,9 +5,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
-import {MatButtonModule, MatSidenavModule} from "@angular/material";
+import {
+  MatButtonModule,
+  MatIconModule,
+  MatListModule,
+  MatSidenavModule,
+  MatToolbarModule,
+  MatInputModule
+} from "@angular/material";
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -18,13 +25,16 @@ import { WebviewDirective } from './directives/webview.directive';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { PlayersComponent } from './components/players/players.component';
+import {PlayersService} from "./components/players/players.service";
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    WebviewDirective
+    WebviewDirective,
+    PlayersComponent
   ],
   imports: [
     BrowserModule,
@@ -33,9 +43,16 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     HttpClientModule,
     AppRoutingModule,
     MatSidenavModule,
-    MatButtonModule
+    MatButtonModule,
+    MatListModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatInputModule
   ],
-  providers: [ElectronService],
+  providers: [
+    ElectronService,
+    PlayersService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

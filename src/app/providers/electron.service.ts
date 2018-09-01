@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 import { ipcRenderer, webFrame, remote } from 'electron';
 import * as childProcess from 'child_process';
 import * as fs from 'fs';
+import * as path from 'path';
 
 @Injectable()
 export class ElectronService {
@@ -31,7 +32,24 @@ export class ElectronService {
     return window && window.process && window.process.type;
   }
 
-  public writeToFile(filePath: string, contents: string) {
+  public readFromFile(fileName: string): string {
+    let appDataPath = this.getUserDataPath();
+    let filePath = path.join(appDataPath, fileName + ".json");
+
+    if (fs.existsSync(filePath)) {
+      return this.fs.readFileSync(filePath).toString();
+    } else {
+      return null;
+    }
+  }
+
+  public writeToFile(fileName: string, contents: string): void {
+    let appDataPath = this.getUserDataPath();
+    let filePath = path.join(appDataPath, fileName + ".json");
     this.fs.writeFileSync(filePath, contents);
+  }
+
+  private getUserDataPath(): string {
+    return this.remote.app.getPath('userData');
   }
 }
