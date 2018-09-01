@@ -8,7 +8,6 @@ export class PlayersService {
 
   private static fileName = "players";
 
-
   public read(): Array<Player> {
     let contents = this.electron.readFromFile(PlayersService.fileName);
     if (contents) {
