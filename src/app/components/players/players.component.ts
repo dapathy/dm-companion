@@ -16,7 +16,7 @@ export class PlayersComponent implements OnInit {
   constructor(private playersService: PlayersService) { }
 
   ngOnInit() {
-    this.players = this.playersService.read();
+    this.players = this.playersService.load();
   }
 
   public addNewPlayer(): void {

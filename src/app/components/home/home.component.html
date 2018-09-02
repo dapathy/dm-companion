@@ -1,7 +1,19 @@
 <div id="entities">
+
+  <div>
+    <form id="new-monster-form">
+      <mat-form-field>
+        <input matInput placeholder="Name" [(ngModel)]="newMonsterName" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+
+      <button mat-raised-button [disabled]="!newMonsterName" (click)="addNewMonster()">Add</button>
+    </form>
+  </div>
+
+
   <mat-list>
     <mat-list-item *ngFor="let entity of entities">
-      <h4>{{entity.name}}</h4>
+      <h4 mat-line>{{entity.name}}</h4>
     </mat-list-item>
   </mat-list>
 </div>

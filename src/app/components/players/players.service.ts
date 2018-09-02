@@ -8,7 +8,7 @@ export class PlayersService {
 
   private static fileName = "players";
 
-  public read(): Array<Player> {
+  public load(): Array<Player> {
     let contents = this.electron.readFromFile(PlayersService.fileName);
     if (contents) {
       return JSON.parse(contents) as Array<Player>;

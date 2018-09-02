@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DndEntity} from "../../models/dndEntity";
+import {PlayersService} from "../players/players.service";
+import {DndApi} from "../../providers/dndApi";
 
 @Component({
   selector: 'app-home',
@@ -9,11 +11,19 @@ import {DndEntity} from "../../models/dndEntity";
 export class HomeComponent implements OnInit {
 
   public entities: Array<DndEntity> = [];
+  public newMonsterName: string;
 
-  constructor() { }
+  constructor(private playersService: PlayersService, private dndApi: DndApi) { }
 
   ngOnInit() {
-    // load from file
+    this.entities = this.entities.concat(this.playersService.load());
   }
 
+  public addNewMonster(): void {
+    this.dndApi.getMonsterByName(this.newMonsterName).subscribe(
+      response => {
+        this.entities.push(response);
+      }
+    )
+  }
 }

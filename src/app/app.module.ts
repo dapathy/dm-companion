@@ -27,6 +27,7 @@ import { HomeComponent } from './components/home/home.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { PlayersComponent } from './components/players/players.component';
 import {PlayersService} from "./components/players/players.service";
+import {DndApi} from "./providers/dndApi";
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import {PlayersService} from "./components/players/players.service";
   ],
   providers: [
     ElectronService,
-    PlayersService
+    PlayersService,
+    DndApi
   ],
   bootstrap: [AppComponent]
 })

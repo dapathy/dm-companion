@@ -3,7 +3,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
 
-
-
+#new-monster-form {
+  button {
+    margin-left: 15px;
+  }
 }
