@@ -25,6 +25,13 @@ export class Monster extends DndEntity {
   challenge_rating: number;
   special_abilities: SpecialAbility[];
   actions: Action[];
+
+  static setInitiative(monster: Monster): void {
+    let random =  Math.floor(Math.random() * (20 - 1 + 1)) + 1;
+    monster.initiative = random + monster.dexterity;
+  }
+
+  icon: string = "android";
 }
 
 export class Action {

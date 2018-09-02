@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import { switchMap } from 'rxjs/operators';
+import { switchMap, tap } from 'rxjs/operators';
 import {Monster} from "../models/monster";
 
 @Injectable()
@@ -18,7 +18,11 @@ export class DndApi {
       switchMap(response => {
         if ((response as any).count !== 1) throw new Error("not good");
 
-        return this.http.get<Monster>(response.results[0].url);
+        return this.http.get<Monster>(response.results[0].url).pipe(
+          tap(response => {
+            response.icon = "android";  // HACK, to get default properties
+          })
+        );
       })
     )
   }
