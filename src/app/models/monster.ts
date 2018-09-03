@@ -28,7 +28,7 @@ export class Monster extends DndEntity {
 
   static setInitiative(monster: Monster): void {
     let random =  Math.floor(Math.random() * (20 - 1 + 1)) + 1;
-    monster.initiative = random + monster.dexterity;
+    monster.initiative = random + DndEntity.getAbilityModifier(monster.dexterity);
   }
 
   icon: string = "android";

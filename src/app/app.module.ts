@@ -3,7 +3,7 @@ import 'reflect-metadata';
 import '../polyfills';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -28,6 +28,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { PlayersComponent } from './components/players/players.component';
 import {PlayersService} from "./components/players/players.service";
 import {DndApi} from "./providers/dndApi";
+import { MonsterComponent } from './components/monster/monster.component';
 
 
 @NgModule({
@@ -35,11 +36,13 @@ import {DndApi} from "./providers/dndApi";
     AppComponent,
     HomeComponent,
     WebviewDirective,
-    PlayersComponent
+    PlayersComponent,
+    MonsterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,

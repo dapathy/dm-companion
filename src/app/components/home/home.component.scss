@@ -19,5 +19,7 @@
 #selected-entity {
   display: inline-block;
   margin-left: 30px;
-  vertical-align: top
+  vertical-align: top;
+  overflow-y: auto;
+  height: 800px;
 }

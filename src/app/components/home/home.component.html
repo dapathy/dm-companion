@@ -26,13 +26,12 @@
       <!-- Monster panel-->
       <div *ngIf="selectedEntity && isMonster(selectedEntity)">
         <h3>{{selectedEntity.name}}</h3>
-
+        <app-monster [value]="selectedEntity"></app-monster>
       </div>
 
       <!-- Player panel -->
       <div *ngIf="selectedEntity && !isMonster(selectedEntity)">
         <h3>{{selectedEntity.name}}</h3>
-
         <form>
           <mat-form-field>
             <input matInput placeholder="Initiative" name="initiative" type="number" [(ngModel)]="selectedEntity.initiative">
