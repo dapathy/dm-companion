@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
   public addNewMonster(): void {
     this.dndApi.getMonsterByName(this.newMonsterName).subscribe(
       response => {
-        Monster.setInitiative(response);
+        Monster.initialize(response);
         this.entities.push(response);
       }, error => {
         console.log(error);

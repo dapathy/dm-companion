@@ -29,6 +29,7 @@ import { PlayersComponent } from './components/players/players.component';
 import {PlayersService} from "./components/players/players.service";
 import {DndApi} from "./providers/dndApi";
 import { MonsterComponent } from './components/monster/monster.component';
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { MonsterComponent } from './components/monster/monster.component';
     MatListModule,
     MatToolbarModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    FlexLayoutModule
   ],
   providers: [
     ElectronService,

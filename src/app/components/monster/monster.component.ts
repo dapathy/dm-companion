@@ -18,8 +18,6 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 export class MonsterComponent implements OnInit, OnChanges {
   @Input() value: Monster;
 
-  //public _value: Monster;
-
   public form: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {}
@@ -35,13 +33,40 @@ export class MonsterComponent implements OnInit, OnChanges {
       hit_points: [''],
       hit_dice: [''],
       speed: [''],
+
       strength: [''],
       dexterity: [''],
       constitution: [''],
       intelligence: [''],
       wisdom: [''],
       charisma: [''],
+
+      strength_save: [''],
+      dexterity_save: [''],
+      constitution_save: [''],
+      intelligence_save: [''],
+      wisdom_save: [''],
+      charisma_save: [''],
+
+      acrobatics: [''],
+      animal_handling: [''],
+      arcana: [''],
+      athletics: [''],
+      deception: [''],
+      history: [''],
+      insight: [''],
+      intimidation: [''],
+      investigation: [''],
+      medicine: [''],
+      nature: [''],
+      perception: [''],
+      performance: [''],
+      persuasion: [''],
+      religion: [''],
+      sleight_of_hand: [''],
       stealth: [''],
+      survival: [''],
+
       damage_vulnerabilities: [''],
       damage_resistances: [''],
       damage_immunities: [''],
