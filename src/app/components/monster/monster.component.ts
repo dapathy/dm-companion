@@ -1,15 +1,24 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges
+} from '@angular/core';
 import {Monster} from "../../models/monster";
 import {FormBuilder, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-monster',
   templateUrl: './monster.component.html',
-  styleUrls: ['./monster.component.scss']
+  styleUrls: ['./monster.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MonsterComponent implements OnInit {
+export class MonsterComponent implements OnInit, OnChanges {
   @Input() value: Monster;
 
+  //public _value: Monster;
 
   public form: FormGroup;
 
@@ -43,6 +52,17 @@ export class MonsterComponent implements OnInit {
     });
 
     this.form.patchValue(this.value);
+  }
+
+  /**
+   * Handle input updates from parent component.
+   */
+  ngOnChanges(changes: SimpleChanges){
+    this.value = changes.value.currentValue;
+
+    if (this.form) {
+      this.form.patchValue(this.value);
+    }
   }
 
 }
