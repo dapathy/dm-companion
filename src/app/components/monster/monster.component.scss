@@ -1,7 +1,15 @@
 #monster-form {
   width: 100%;
+}
 
-  mat-form-field {
-    width: 200px;
-  }
+mat-form-field {
+  width: 200px;
+}
+
+.large-form-field {
+  width: 400px;
+}
+
+.ability-name  {
+  font-weight: bold;
 }

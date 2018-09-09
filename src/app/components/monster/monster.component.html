@@ -34,7 +34,7 @@
   </div>
 
   <div>
-    <h4>Passive Effects</h4>
+    <h4>Passive Traits</h4>
     <mat-form-field>
       <textarea mat-autosize="true" type="text" matInput placeholder="Vulnerabilities" formControlName="damage_vulnerabilities"></textarea>
     </mat-form-field>
@@ -74,17 +74,17 @@
     </mat-form-field>
   </div>
 
-  <div >
+  <div>
     <div formArrayName="special_abilities" [hidden]="specialAbilities.length === 0">
       <h4>Special Abilities</h4>
       <!--<h3>Aliases</h3> <button (click)="addAlias()">Add Alias</button>-->
 
       <div *ngFor="let control of specialAbilities.controls; let i=index">
         <div [formGroupName]="i">
-          <mat-form-field>
-            <input type="text" matInput placeholder="Name" formControlName="name">
+          <mat-form-field class="ability-name">
+            <textarea mat-autosize="true" type="text" matInput placeholder="Name" formControlName="name"></textarea>
           </mat-form-field>
-          <mat-form-field>
+          <mat-form-field class="large-form-field">
             <textarea mat-autosize="true" type="text" matInput placeholder="Description" formControlName="desc"></textarea>
           </mat-form-field>
           <mat-form-field>
@@ -100,10 +100,10 @@
 
       <div *ngFor="let control of actions.controls; let i=index">
         <div [formGroupName]="i">
-          <mat-form-field>
-            <input type="text" matInput placeholder="Name" formControlName="name">
+          <mat-form-field class="ability-name">
+            <textarea mat-autosize="true" type="text" matInput placeholder="Name" formControlName="name"></textarea>
           </mat-form-field>
-          <mat-form-field>
+          <mat-form-field class="large-form-field">
             <textarea mat-autosize="true" type="text" matInput placeholder="Description" formControlName="desc"></textarea>
           </mat-form-field>
           <mat-form-field>
@@ -125,10 +125,10 @@
 
       <div *ngFor="let control of legendaryActions.controls; let i=index">
         <div [formGroupName]="i">
-          <mat-form-field>
-            <input type="text" matInput placeholder="Name" formControlName="name">
+          <mat-form-field class="ability-name">
+            <textarea mat-autosize="true" type="text" matInput placeholder="Name" formControlName="name"></textarea>
           </mat-form-field>
-          <mat-form-field>
+          <mat-form-field class="large-form-field">
             <textarea mat-autosize="true" type="text" matInput placeholder="Description" formControlName="desc"></textarea>
           </mat-form-field>
           <mat-form-field>
