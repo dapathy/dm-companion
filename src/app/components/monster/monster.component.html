@@ -1,142 +1,190 @@
 <form [formGroup]="form" id="monster-form">
   <div>
-    <div>
-      <h4>General</h4>
-      <mat-form-field>
-        <input type="number" matInput placeholder="HP" formControlName="hit_points">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="number" matInput placeholder="AC" formControlName="armor_class">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="number" matInput placeholder="Initiative" formControlName="initiative">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="text" matInput placeholder="Size" formControlName="size">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="text" matInput placeholder="Type" formControlName="type">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="text" matInput placeholder="Subtype" formControlName="subtype">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="text" matInput placeholder="Alignment" formControlName="alignment">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="number" matInput placeholder="CR" formControlName="challenge_rating">
-      </mat-form-field>
-      <mat-form-field>
-        <textarea mat-autosize="true" type="text" matInput placeholder="Languages" formControlName="languages"></textarea>
-      </mat-form-field>
-      <!--<mat-form-field>-->
-      <!--<input type="text" matInput placeholder="Dice" formControlName="hit_dice">-->
-      <!--</mat-form-field>-->
-    </div>
-
-    <div>
-      <h4>Passive effects</h4>
-      <mat-form-field>
-        <textarea mat-autosize="true" type="text" matInput placeholder="Vulnerabilities" formControlName="damage_vulnerabilities"></textarea>
-      </mat-form-field>
-      <mat-form-field>
-        <textarea mat-autosize="true" type="text" matInput placeholder="Resistances" formControlName="damage_resistances"></textarea>
-      </mat-form-field>
-      <mat-form-field>
-        <textarea mat-autosize="true" type="text" matInput placeholder="Damage immunities" formControlName="damage_immunities"></textarea>
-      </mat-form-field>
-      <mat-form-field>
-        <textarea mat-autosize="true" type="text" matInput placeholder="Condition immunities" formControlName="condition_immunities"></textarea>
-      </mat-form-field>
-      <mat-form-field>
-        <textarea mat-autosize="true" type="text" matInput placeholder="Senses" formControlName="senses"></textarea>
-      </mat-form-field>
-    </div>
-
-    <div>
-      <h4>Ability Save Bonuses</h4>
-      <mat-form-field>
-        <input type="number" matInput placeholder="Strength save bonus" formControlName="strength_save">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="number" matInput placeholder="Dexterity save bonus" formControlName="dexterity_save">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="number" matInput placeholder="Constitution save bonus" formControlName="constitution_save">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="number" matInput placeholder="Intelligence save bonus" formControlName="intelligence_save">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="number" matInput placeholder="Wisdom save bonus" formControlName="wisdom_save">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="number" matInput placeholder="Charisma save bonus" formControlName="charisma_save">
-      </mat-form-field>
-    </div>
+    <h4>General</h4>
+    <mat-form-field>
+      <input type="number" matInput placeholder="HP" formControlName="hit_points">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="number" matInput placeholder="AC" formControlName="armor_class">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="number" matInput placeholder="Initiative" formControlName="initiative">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Size" formControlName="size">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Type" formControlName="type">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Subtype" formControlName="subtype">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Alignment" formControlName="alignment">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="number" matInput placeholder="CR" formControlName="challenge_rating">
+    </mat-form-field>
+    <mat-form-field>
+      <textarea mat-autosize="true" type="text" matInput placeholder="Languages" formControlName="languages"></textarea>
+    </mat-form-field>
+    <!--<mat-form-field>-->
+    <!--<input type="text" matInput placeholder="Dice" formControlName="hit_dice">-->
+    <!--</mat-form-field>-->
   </div>
 
   <div>
-
-    <div>
-      <h4>Abilities</h4>
-      <mat-form-field>
-        <input type="text" matInput placeholder="Speed" formControlName="speed">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="number" matInput placeholder="Strength" formControlName="strength">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="number" matInput placeholder="Dexterity" formControlName="dexterity">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="number" matInput placeholder="Constitution" formControlName="constitution">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="number" matInput placeholder="Intelligence" formControlName="intelligence">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="number" matInput placeholder="Wisdom" formControlName="wisdom">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="number" matInput placeholder="Charisma" formControlName="charisma">
-      </mat-form-field>
-    </div>
-
-    <div>
-      <h4>Skill Bonuses</h4>
-      <mat-form-field>
-        <input type="text" matInput placeholder="Perception bonus" formControlName="perception">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="text" matInput placeholder="Perception bonus" formControlName="perception">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="text" matInput placeholder="Stealth bonus" formControlName="stealth">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="text" matInput placeholder="Insight bonus" formControlName="insight">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="text" matInput placeholder="Persuasion bonus" formControlName="persuasion">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="text" matInput placeholder="Deception bonus" formControlName="deception">
-      </mat-form-field>
-    </div>
-
+    <h4>Passive Effects</h4>
+    <mat-form-field>
+      <textarea mat-autosize="true" type="text" matInput placeholder="Vulnerabilities" formControlName="damage_vulnerabilities"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea mat-autosize="true" type="text" matInput placeholder="Resistances" formControlName="damage_resistances"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea mat-autosize="true" type="text" matInput placeholder="Damage immunities" formControlName="damage_immunities"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea mat-autosize="true" type="text" matInput placeholder="Condition immunities" formControlName="condition_immunities"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea mat-autosize="true" type="text" matInput placeholder="Senses" formControlName="senses"></textarea>
+    </mat-form-field>
   </div>
 
-  <div fxLayout="row" fxLayoutGap="10px">
-    <div fxFlex="50%">
+  <div>
+    <h4>Ability Save Bonuses</h4>
+    <mat-form-field>
+      <input type="number" matInput placeholder="Strength save bonus" formControlName="strength_save">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="number" matInput placeholder="Dexterity save bonus" formControlName="dexterity_save">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="number" matInput placeholder="Constitution save bonus" formControlName="constitution_save">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="number" matInput placeholder="Intelligence save bonus" formControlName="intelligence_save">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="number" matInput placeholder="Wisdom save bonus" formControlName="wisdom_save">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="number" matInput placeholder="Charisma save bonus" formControlName="charisma_save">
+    </mat-form-field>
+  </div>
 
+  <div >
+    <div formArrayName="special_abilities" [hidden]="specialAbilities.length === 0">
+      <h4>Special Abilities</h4>
+      <!--<h3>Aliases</h3> <button (click)="addAlias()">Add Alias</button>-->
+
+      <div *ngFor="let control of specialAbilities.controls; let i=index">
+        <div [formGroupName]="i">
+          <mat-form-field>
+            <input type="text" matInput placeholder="Name" formControlName="name">
+          </mat-form-field>
+          <mat-form-field>
+            <textarea mat-autosize="true" type="text" matInput placeholder="Description" formControlName="desc"></textarea>
+          </mat-form-field>
+          <mat-form-field>
+            <input type="number" matInput placeholder="Attack bonus" formControlName="attack_bonus">
+          </mat-form-field>
+        </div>
+      </div>
     </div>
 
-    <div fxFlex="50%">
+    <div formArrayName="actions" [hidden]="actions.length === 0">
+      <h4>Actions</h4>
+      <!--<h3>Aliases</h3> <button (click)="addAlias()">Add Alias</button>-->
 
+      <div *ngFor="let control of actions.controls; let i=index">
+        <div [formGroupName]="i">
+          <mat-form-field>
+            <input type="text" matInput placeholder="Name" formControlName="name">
+          </mat-form-field>
+          <mat-form-field>
+            <textarea mat-autosize="true" type="text" matInput placeholder="Description" formControlName="desc"></textarea>
+          </mat-form-field>
+          <mat-form-field>
+            <input type="number" matInput placeholder="Attack bonus" formControlName="attack_bonus">
+          </mat-form-field>
+          <mat-form-field>
+            <input type="number" matInput placeholder="Damage bonus" formControlName="damage_bonus">
+          </mat-form-field>
+          <mat-form-field>
+            <input type="number" matInput placeholder="Damage dice" formControlName="damage_dice">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+    <div formArrayName="legendary_actions" [hidden]="legendaryActions.length === 0">
+      <h4>Legendary Actions</h4>
+      <!--<h3>Aliases</h3> <button (click)="addAlias()">Add Alias</button>-->
+
+      <div *ngFor="let control of legendaryActions.controls; let i=index">
+        <div [formGroupName]="i">
+          <mat-form-field>
+            <input type="text" matInput placeholder="Name" formControlName="name">
+          </mat-form-field>
+          <mat-form-field>
+            <textarea mat-autosize="true" type="text" matInput placeholder="Description" formControlName="desc"></textarea>
+          </mat-form-field>
+          <mat-form-field>
+            <input type="number" matInput placeholder="Attack bonus" formControlName="attack_bonus">
+          </mat-form-field>
+        </div>
+      </div>
     </div>
   </div>
 
 
+  <div>
+    <h4>Abilities</h4>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Speed" formControlName="speed">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="number" matInput placeholder="Strength" formControlName="strength">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="number" matInput placeholder="Dexterity" formControlName="dexterity">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="number" matInput placeholder="Constitution" formControlName="constitution">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="number" matInput placeholder="Intelligence" formControlName="intelligence">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="number" matInput placeholder="Wisdom" formControlName="wisdom">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="number" matInput placeholder="Charisma" formControlName="charisma">
+    </mat-form-field>
+  </div>
+
+  <div>
+    <h4>Skill Bonuses</h4>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Perception bonus" formControlName="perception">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Perception bonus" formControlName="perception">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Stealth bonus" formControlName="stealth">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Insight bonus" formControlName="insight">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Persuasion bonus" formControlName="persuasion">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Deception bonus" formControlName="deception">
+    </mat-form-field>
+  </div>
 
 </form>

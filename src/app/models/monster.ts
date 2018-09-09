@@ -51,6 +51,7 @@ export class Monster extends DndEntity {
   senses: string;
   languages: string;
   challenge_rating: number;
+
   special_abilities: SpecialAbility[];
   actions: Action[];
   legendary_actions: SpecialAbility[];

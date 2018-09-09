@@ -7,7 +7,7 @@ import {
   SimpleChanges
 } from '@angular/core';
 import {Monster} from "../../models/monster";
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormArray, FormBuilder, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-monster',
@@ -73,11 +73,15 @@ export class MonsterComponent implements OnInit, OnChanges {
       condition_immunities: [''],
       senses: [''],
       languages: [''],
-      challenge_rating: ['']
+      challenge_rating: [''],
+
+      special_abilities: new FormArray([]),
+      actions: new FormArray([]),
+      legendary_actions: new FormArray([])
 
     });
 
-    this.form.patchValue(this.value);
+    this.initializeForm(this.value);
   }
 
   /**
@@ -87,8 +91,57 @@ export class MonsterComponent implements OnInit, OnChanges {
     this.value = changes.value.currentValue;
 
     if (this.form) {
-      this.form.patchValue(this.value);
+      this.initializeForm(this.value);
     }
+  }
+
+  get specialAbilities(): FormArray {
+    return this.form.get('special_abilities') as FormArray;
+  }
+
+  get actions(): FormArray {
+    return this.form.get('actions') as FormArray;
+  }
+
+  get legendaryActions(): FormArray {
+    return this.form.get('legendary_actions') as FormArray;
+  }
+
+  private initializeForm(value: Monster): void {
+    this.form.patchValue(value);
+
+    if (value.special_abilities) {
+      for (let specialAbility of value.special_abilities) {
+        this.specialAbilities.push(this.formBuilder.group({
+          name: [specialAbility.name],
+          desc: [specialAbility.desc],
+          attack_bonus: [specialAbility.attack_bonus]
+        }));
+      }
+    }
+
+    if (value.actions) {
+      for (let action of value.actions) {
+        this.actions.push(this.formBuilder.group({
+          name: [action.name],
+          desc: [action.desc],
+          attack_bonus: [action.attack_bonus],
+          damage_bonus: [action.damage_bonus],
+          damage_dice: [action.damage_dice]
+        }));
+      }
+    }
+
+    if (value.legendary_actions) {
+      for (let legendaryAction of value.legendary_actions) {
+        this.legendaryActions.push(this.formBuilder.group({
+          name: [legendaryAction.name],
+          desc: [legendaryAction.desc],
+          attack_bonus: [legendaryAction.attack_bonus]
+        }));
+      }
+    }
+
   }
 
 }
