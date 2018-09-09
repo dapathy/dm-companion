@@ -52,4 +52,8 @@ export class HomeComponent implements OnInit {
       return 0;
     });
   }
+
+  public onPlayerChange(): void {
+    this.sort();
+  }
 }
