@@ -110,6 +110,11 @@ export class MonsterComponent implements OnInit, OnChanges {
   private initializeForm(value: Monster): void {
     this.form.patchValue(value);
 
+    // clear existing FormArrays
+    this.form.controls.special_abilities = this.formBuilder.array([]);
+    this.form.controls.actions = this.formBuilder.array([]);
+    this.form.controls.legendary_actions = this.formBuilder.array([]);
+
     if (value.special_abilities) {
       for (let specialAbility of value.special_abilities) {
         this.specialAbilities.push(this.formBuilder.group({
@@ -141,7 +146,5 @@ export class MonsterComponent implements OnInit, OnChanges {
         }));
       }
     }
-
   }
-
 }
