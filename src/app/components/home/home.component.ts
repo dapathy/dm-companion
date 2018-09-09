@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit {
       response => {
         Monster.initialize(response);
         this.entities.push(response);
+        this.sort();
       }, error => {
         console.log(error);
       }
@@ -39,5 +40,16 @@ export class HomeComponent implements OnInit {
   public isMonster(entity: any): boolean {
     // HACK
     return entity.hasOwnProperty("size");
+  }
+
+  public sort(): void {
+    this.entities.sort((a, b) => {
+      let initiativeA = a.initiative || 999;
+      let initiativeB = b.initiative || 999;
+
+      if (initiativeA < initiativeB) return 1;
+      if (initiativeA > initiativeB) return -1;
+      return 0;
+    });
   }
 }
