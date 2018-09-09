@@ -13,7 +13,7 @@ import {
   MatListModule,
   MatSidenavModule,
   MatToolbarModule,
-  MatInputModule
+  MatInputModule, MatExpansionModule
 } from "@angular/material";
 
 import { AppRoutingModule } from './app-routing.module';
@@ -53,6 +53,7 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     MatToolbarModule,
     MatIconModule,
     MatInputModule,
+    MatExpansionModule,
     FlexLayoutModule
   ],
   providers: [

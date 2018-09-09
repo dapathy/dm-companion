@@ -70,8 +70,9 @@ export class MonsterComponent implements OnInit, OnChanges {
       damage_vulnerabilities: [''],
       damage_resistances: [''],
       damage_immunities: [''],
-      sense: [''],
-      language: [''],
+      condition_immunities: [''],
+      senses: [''],
+      languages: [''],
       challenge_rating: ['']
 
     });
